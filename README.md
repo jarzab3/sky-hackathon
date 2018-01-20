@@ -1,2 +1,0 @@
-# sky-hackathon
-Test
