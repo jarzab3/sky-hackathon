@@ -1,0 +1,189 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <title>Kick ASS (Automated Support Service)</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+    <script type="text/javascript">
+        window.onbeforeunload = function()
+        {
+            var lo = window.location.href + "reset_chat/";
+            $.getJSON( lo, function(data){});
+        }
+    </script>
+</head>
+<body onload="submitInput()">
+
+{% include 'nav.html' %}
+
+<div class="container">
+
+    <div class="jumbotron mt-1">
+        <h1 class="jumbotron-heading text-xs-center">Welcome to Sky Support</h1>
+        <p class="lead text-xs-center">
+            Please use the chat box below to talk to our Sky Bot about your issues...
+        </p>
+
+        <hr class="my-2">
+
+        <div class="row chat-log">
+
+        </div>
+            <div class="input-group input-group-lg mt-1">
+                <input type="text" class="form-control js-text" placeholder="Type something to begin..."/>
+                <span class="input-group-btn">
+            <button class="btn btn-primary js-say">Submit</button>
+                </span>
+            </div>
+
+        
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    var a = "{{data}}";
+
+    runoe = true;
+
+    function annn() {
+        var x = document.getElementsByClassName("list-group-item");
+//        console.log(x);
+        b = x[0];
+        b.style.display = 'none';
+        setTimeout(annn, 2000);
+        runoe = false;
+    }
+
+
+</script>
+
+
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/js.cookie.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script>
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    //      $.ajaxSetup({
+    //        beforeSend: function(xhr, settings) {
+    //          if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+    //            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+    //          }
+    //        }
+    //      });
+
+    var $chatlog = $('.chat-log');
+    var $input = $('.js-text');
+    var $sayButton = $('.js-say');
+
+    $(document).ready(function() {
+  setTimeout(function() {
+      if (runoe){
+        annn()
+        }
+//    $("#signInButton").trigger('click');
+  }, 100);
+});
+
+
+
+
+    function createIssue(text) {
+        var $row = $('<div class="col-xs-5"><ul class="list-group js-chat-log1"><li class="list-group-item">'+ text +'</li></ul></div>');
+        //$row.text(text);
+        $chatlog.append($row);
+
+        // Scroll to the bottom of the chat interface
+        $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+    }
+
+    function createRespond(text) {
+        var $row = $('<div class="col-xs-5 offset-xs-7"><ul class="list-group js-chat-log2"><li class="list-group-item list-group-item-success">' + text + '</li></ul></div>');
+        //$row.text(text);
+        $chatlog.append($row);
+
+        // Scroll to the bottom of the chat interface
+        $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+    }
+    function createSession(text) {
+        var $session = $('<')
+    }
+
+    function createRows(rowItems) {
+        var i = 0;
+
+        function delayedLoop() {
+            createRespond(rowItems[i]);
+            if(++i == rowItems.length) {
+                return;
+            }
+            setTimeout(delayedLoop, 1000);
+        }
+        delayedLoop();
+    }
+
+    function submitInput() {
+        var inputData = {
+            'text': $input.val()
+        }
+//        console.log(inputData.text);
+
+        // Display the user's input on the web page
+        createIssue(inputData.text);
+
+//         var $submit = $.ajax({
+//             type: 'POST',
+// //          url: chatterbotUrl,
+// //          url: "",
+//             data: JSON.stringify(inputData),
+//             contentType: 'application/json'
+//         });
+        
+        function get_response(data)
+        {
+
+            var lo = window.location.href + "chat/?user_input=";
+
+            $.getJSON( lo + data, function(data){
+                show_feedback(data)
+            });
+        }
+
+        get_response($input.val())
+
+        function show_feedback(statement)
+        {
+            var responses = statement; 
+            createRows(responses);
+            $input.val('');
+            $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+        }
+
+        //$submit.done(show_feedback);
+        //$submit.fail(function () {});
+    }
+
+    $sayButton.click(function () {
+        submitInput();
+    });
+
+    $input.keydown(function (event) {
+        // Submit the input when the enter button is pressed
+        if (event.keyCode == 13) {
+            submitInput();
+        }
+    });
+</script>
+</body>
+</html>

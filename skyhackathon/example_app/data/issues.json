@@ -1,0 +1,118 @@
+{
+    "no emails": {
+        "status": "Please check that you have payed your most recent bill",
+        "question": "i am not receiving emails",
+        "keywords": [
+            "no",
+            "emails"
+        ],
+        "frequency": 1,
+        "last_query_time": 1516454961.029871
+    },
+    "slow internet": {
+        "status": "Engineers are working on it and it will be solved by noon",
+        "question": "My internet is very slow",
+        "keywords": [
+            "slow",
+            "throttle",
+            "no response"
+        ],
+        "frequency": 10,
+        "last_query_time": 1516452903.123445
+    },
+    "connection": {
+        "status": "This issue has been resolved",
+        "question": "I have a connection problem",
+        "keywords": [
+            "connection",
+            "could not connect"
+        ],
+        "frequency": 8,
+        "last_query_time": 1516451000.123435
+    },
+    "jenkins down": {
+        "status": "Issue should be fixed by 6pm",
+        "question": "can't connect to jenkins to run builds",
+        "keywords": [
+            "jenkins",
+            "down"
+        ],
+        "frequency": 6,
+        "last_query_time": 1516462603.8221812
+    },
+    "aws down": {
+        "question": "absndk",
+        "last_query_time": 1516465115.0120718,
+        "keywords": [
+            "aws",
+            "down"
+        ],
+        "status": "We are waiting on our provider to fix this",
+        "frequency": 1
+    },
+    "yes": {
+        "question": "no internet",
+        "last_query_time": 1516465468.9893692,
+        "keywords": [
+            "yes"
+        ],
+        "status": "We are waiting on our provider to fix this",
+        "frequency": 1
+    },
+    "no tv": {
+        "question": "my tv is not working",
+        "last_query_time": 1516465540.979479,
+        "keywords": [
+            "no",
+            "tv"
+        ],
+        "status": "An engineer is currently looking into this",
+        "frequency": 1
+    },
+    "": {
+        "question": "chibuike",
+        "last_query_time": 1516465575.835891,
+        "keywords": [],
+        "status": "An engineer is currently looking into this",
+        "frequency": 1
+    },
+    "notv": {
+        "question": "ads",
+        "last_query_time": 1516475548.26405,
+        "keywords": [
+            "notv"
+        ],
+        "status": "An engineer is currently looking into this",
+        "frequency": 1
+    },
+    "nio inter": {
+        "question": "ads",
+        "last_query_time": 1516475591.99244,
+        "keywords": [
+            "nio",
+            "inter"
+        ],
+        "status": "We are waiting on our provider to fix this",
+        "frequency": 1
+    },
+    "no internet": {
+        "question": "no internet",
+        "last_query_time": 1516482867.485158,
+        "keywords": [
+            "no",
+            "internet"
+        ],
+        "status": "We are waiting on our provider to fix this",
+        "frequency": 1
+    },
+    "no tear": {
+        "question": "ashad",
+        "last_query_time": 1516484530.155972,
+        "keywords": [
+            "no",
+            "tear"
+        ],
+        "status": "An engineer is currently looking into this",
+        "frequency": 1
+    }
+}

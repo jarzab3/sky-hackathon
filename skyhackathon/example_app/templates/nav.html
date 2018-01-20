@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<nav class="navbar navbar-dark bg-inverse navbar-full">
+
+  <a class="navbar-brand" href="{% url 'main' %}">
+    <img src="{% static 'img/sky_small.png' %}" class="d-inline-block align-top" alt="Sky">
+    Kick ASS
+  </a>
+
+  <ul class="nav navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Chat to Sky Bot</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Top issues</a>
+    </li>
+  </ul>
+
+  <!--<ul class="nav navbar-nav float-xs-right">-->
+    <!--<li class="nav-item">-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="nav-link" href="{% url 'admin:index' %}">Admin</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+</nav>

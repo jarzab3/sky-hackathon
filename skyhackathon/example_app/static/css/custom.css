@@ -1,0 +1,27 @@
+/* Alternate the background color of the output rows */
+/*.list-group-item:nth-child(even) {
+    background-color: #bdf1ac;
+}*/
+
+.chat-log {
+    max-height:400px;
+    overflow-y:scroll;
+}
+
+.list-group-item {
+    margin-bottom:10px;
+    padding:10px;
+    border: 2px solid #f5f5f5;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius:15px;
+}
+
+/*.row.issues {
+    position: relative;
+    left: 50%;
+}
+.row.answers {
+    position: relative;
+    right: 50%;
+}*/
