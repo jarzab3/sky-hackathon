@@ -29,7 +29,7 @@ Documentation
 [Tutorial](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
 
 2. Install requirements
-`pip install -r requirements.txt`
+`pip install -r requirements/requirements.txt`
 
 3. Start the Django app by running `python manage.py runserver 0.0.0.0:8000` or `./manage.py runserver`
 
